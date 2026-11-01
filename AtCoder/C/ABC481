@@ -15,6 +15,24 @@ query_iはi回目の出来事を表し、以下の形式で与えられる。
 s
 出力
 Q行出力せよ。i行目には、i回目の出来事で出力するべき値を出力せよ。
+In the backyard of Kowasugi Bank, a ghost is growing pumpkins. You’ve decided to open bank accounts for the pumpkins. When opening a bank account for a pumpkin, you assign it one name and one ID. When selecting an ID value, you choose the smallest positive integer that hasn’t yet been used as an ID. Initially, no bank accounts have been opened for the pumpkins. The following event occurs Q times; please process them in order.
+A pumpkin arrives and introduces itself as name s. If an account with the assigned ID s already exists, output that ID. If no account with the assigned ID s exists, open a new account for name s and output its ID.
+Constraints
+Q is an integer between 1 and 2×10^5, inclusive.
+For each event, `s` is a string consisting of lowercase English letters, with a length between 1 and 10.
+Input
+The input is provided via standard input in the following format:
+Q
+query_1
+⋮
+query_Q
+​
+`query_i` represents the `i`-th event and is given in the following format:
+s
+Output
+Output `Q` lines. On the `i`-th line, output the value that should be output for the `i`-th event.
+
+Translated with DeepL.com (free version)
 '''
 q = int(input())
 s = []
