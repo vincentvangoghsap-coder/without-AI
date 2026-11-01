@@ -1,4 +1,4 @@
-...
+'''
 辞書 dw は、文字列（文書のタイトルを表します）をキー、 文字列（文書を構成する単語を表します）のリストを値とします。 dw を受け取って、単語 $w$ をキー、dw が持つリスト全体における $w$ の頻度（すなわち出現回数）を値とする辞書を返す関数 compute_word_frequency(dw) を定義します。たとえば、 dw が
 {'t1': ['I', 'have', 'book'], 't2': ['I', 'student'], 't3': ['I', 'go', 'book', 'store']}
 であるとき、 compute_word_frequency(dw) は、
@@ -9,7 +9,7 @@ For example, if dw is
 {'t1': ['I', 'have', 'book'], 't2': ['I', 'student'], 't3': ['I', 'go', 'book', 'store']},
 then, compute_word_frequency(dw) should return
 {'I': 3, 'have': 1, 'book': 2, 'student': 1, 'go': 1, 'store': 1}.
-...
+'''
 def compute_word_frequency(dw):
     a = list(dw.values())
     b = {}
