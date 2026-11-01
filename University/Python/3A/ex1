@@ -1,4 +1,4 @@
-...
+'''
 3本の線分の長さを表す非負数 a, b, c を受け取り、その線分が
 三角形を構成しないならば 0
 鋭角三角形を構成するならば 1
@@ -10,7 +10,7 @@ Define a function classify_triangle(a,b,c) such that it takes three non-negative
 1 if they form an acute triangle,
 2 if they form a right triangle, and
 3 if they form an obtuse triangle.
-...
+'''
 
 def classify_triangle(a, b, c):
     if a >= b + c or b >= c + a or c >= a + b:
