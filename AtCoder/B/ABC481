@@ -1,0 +1,43 @@
+...
+xy 平面上に1,2,…,N の番号が付けられた N個の点があり、点iの座標は (i,A_i​)です。i=1,2,…,N−1 について点iと点i+1を線分で結び、1本の折れ線を作ります。この折れ線上（端点も含む）にある点のうち、y座標が
+Kであるものの個数を求めてください。ただし、制約より条件を満たす点の個数は有限であることが保証されます。
+制約
+2 ≤ N ≤ 100
+1 ≤ A_i ​≤ 100 (1≤i≤N)
+A_i != A_i+1(1≤i<N)
+1 ≤ K ≤ 100
+入力される値はすべて整数
+入力
+入力は以下の形式で標準入力から与えられる。
+N K
+A_1 A_2 ~ A_N
+​出力
+折れ線上にある点のうち、y座標がKであるものの個数を出力せよ。
+There are N points on the xy-plane numbered 1, 2, …, N, where the coordinates of point i are (i, A_i). For each i = 1, 2, …, N−1, draw a line segment connecting point i to point i+1 to form a single polyline. Determine the number of points on this polyline (including the endpoints) whose y-coordinate is K. Note that, given the constraints, it is guaranteed that the number of points satisfying the condition is finite.
+Constraints
+2 ≤ N ≤ 100
+1 ≤ A_i ≤ 100 (1 ≤ i ≤ N)
+A_i ≠ A_(i+1) (1 ≤ i < N)
+1 ≤ K ≤ 100
+All input values are integers.
+Input
+The input is provided via standard input in the following format:
+N K
+A_1 A_2 ~ A_N
+Output
+Output the number of points on the broken line whose y-coordinate is K.
+...
+
+s = list(map(int, input().split()))
+c = list(map(int, input().split()))
+ans = 0
+for i in range(s[0] - 1):
+  if c[i] > s[1] and c[i + 1] < s[1]:
+    ans += 1
+  elif c[i] < s[1] and c[i + 1] > s[1]:
+    ans += 1
+  elif c[i] == s[1]:
+    ans += 1
+if c[s[0] - 1] == s[1]:
+  ans += 1
+print(ans)
