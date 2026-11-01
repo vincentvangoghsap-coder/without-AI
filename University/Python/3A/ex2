@@ -13,3 +13,7 @@ def calculate_ops(lp):
         else:
             a -= lp[i][1]
     return a
+assert calculate_ops([('+', 3), ('-', 5), ('+', 2), ('+', 1), ('-', 10)]) == -9
+assert calculate_ops([('-', 1), ('-', 2), ('-', 3)]) == -6
+assert calculate_ops([('+', 1), ('+', 2), ('+', 3)]) == 6
+assert calculate_ops([]) == 0
