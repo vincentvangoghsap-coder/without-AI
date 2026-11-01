@@ -1,0 +1,25 @@
+...
+辞書 dw は、文字列（文書のタイトルを表します）をキー、 文字列（文書を構成する単語を表します）のリストを値とします。 dw を受け取って、単語 $w$ をキー、dw が持つリスト全体における $w$ の頻度（すなわち出現回数）を値とする辞書を返す関数 compute_word_frequency(dw) を定義します。たとえば、 dw が
+{'t1': ['I', 'have', 'book'], 't2': ['I', 'student'], 't3': ['I', 'go', 'book', 'store']}
+であるとき、 compute_word_frequency(dw) は、
+{'I': 3, 'have': 1, 'book': 2, 'student': 1, 'go': 1, 'store': 1}
+を返します。
+A dictionary dw has a string (which represents the title of a document) as a key and a list of strings (which represent words in the document) as the corresponding value. Define a function compute_word_frequency(dw) that is given dw, and returns a dictionary that maps each word $w$ to the frequency (the number of occurrences) of $w$ over all the lists in dw.
+For example, if dw is
+{'t1': ['I', 'have', 'book'], 't2': ['I', 'student'], 't3': ['I', 'go', 'book', 'store']},
+then, compute_word_frequency(dw) should return
+{'I': 3, 'have': 1, 'book': 2, 'student': 1, 'go': 1, 'store': 1}.
+...
+def compute_word_frequency(dw):
+    a = list(dw.values())
+    b = {}
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            if a[i][j] in b:
+                b[a[i][j]] += 1
+            else:
+                b[a[i][j]] = 1
+    return b
+
+assert compute_word_frequency({'t1': ['I', 'have', 'book'], 't2': ['I', 'student'], 't3': ['I', 'go', 'book', 'store']}) == {'I': 3, 'have': 1, 'book': 2, 'student': 1, 'go': 1, 'store': 1}
+assert compute_word_frequency({'k1':['a', 'b', 'a', 'c'], 'k2':['b', 'c', 'b', 'd']}) == {'a': 2, 'b': 3, 'c': 2, 'd': 1}
