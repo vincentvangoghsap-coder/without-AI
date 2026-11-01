@@ -34,6 +34,7 @@ Output `Q` lines. On the `i`-th line, output the value that should be output for
 
 Translated with DeepL.com (free version)
 '''
+
 q = int(input())
 s = []
 a = {}
